@@ -52,14 +52,12 @@
 ## Requisitos Funcionais
 
 <ul>
-  <li><strong>[RF001]</strong> Permitir cadastro, login e gerenciamento de usuários com diferentes níveis de acesso (administrador e vendedor). [Abílio]</li>
-  <li><strong>[RF002]</strong> Cadastrar, editar e excluir veículos (marca, modelo, ano, valor, quilometragem, cor e imagem). [Giovani]</li>
-  <li><strong>[RF003]</strong> Exibir listagem e pesquisa de veículos com filtros (marca, modelo, preço e disponibilidade). [Giovani]</li>
-  <li><strong>[RF004]</strong> Registrar vendas associando veículos, clientes e vendedores. [Joabe]</li>
-  <li><strong>[RF005]</strong> Gerar relatórios de vendas com filtros por período, veículo ou funcionário. [Luiz Felipe]</li>
-  <li><strong>[RF006]</strong> Cadastrar e gerenciar clientes (nome, CPF, telefone, e-mail, endereço). [Joabe]</li>
-  <li><strong>[RF007]</strong> Visualizar histórico de vendas da organização e por vendedor. [Luiz Felipe]</li>
-  <li><strong>[RF008]</strong> Painel administrativo com indicadores de vendas, lucros e estoque. [Giovani]</li>
+  <li><strong>[RF001]</strong> Permitir login. </li>
+  <li><strong>[RF002]</strong> Cadastrar, editar e excluir veículos (marca, modelo, valor, cor e etc... ). </li>
+  <li><strong>[RF003]</strong> Exibir listagem e pesquisa de pedidos com filtros de status. </li>
+  <li><strong>[RF006]</strong> Cadastrar e gerenciar clientes (nome, CPF, telefone, e-mail, endereço). </li>
+  <li><strong>[RF007]</strong> Visualizar histórico de vendas da organização e por vendedor. </li>
+  <li><strong>[RF008]</strong> Painel administrativo com indicadores de vendas, lucros e estoque. </li>
 </ul>
 
 ---
@@ -67,11 +65,11 @@
 ## Requisitos de Integração IoT
 
 <ul>
-  <li><strong>[RI001]</strong> Estabelecer comunicação entre a plataforma e a bancada IoT via HTTP, MQTT ou WebSocket. [Joabe]</li>
-  <li><strong>[RI002]</strong> Enviar comandos da aplicação web para acionar atuadores na bancada (LEDs, buzzer, etc.). [Joabe]</li>
-  <li><strong>[RI003]</strong> Receber dados de sensores em tempo real (ex.: temperatura, distância, presença). [Joabe]</li>
-  <li><strong>[RI004]</strong> Exibir em tempo real o status dos sensores e dispositivos na interface da aplicação. [Joabe]</li>
-  <li><strong>[RI005]</strong> Registrar no banco de dados os eventos gerados pela interação com os dispositivos IoT. [Joabe]</li>
+  <li><strong>[RI001]</strong> Estabelecer comunicação entre a plataforma e a bancada IoT via HTTP, MQTT ou WebSocket. </li>
+  <li><strong>[RI002]</strong> Enviar comandos da aplicação web para acionar atuadores na bancada (LEDs, buzzer, etc.). </li>
+  <li><strong>[RI003]</strong> Receber dados de sensores em tempo real (ex.: temperatura, distância, presença). </li>
+  <li><strong>[RI004]</strong> Exibir em tempo real o status dos sensores e dispositivos na interface da aplicação. </li>
+  <li><strong>[RI005]</strong> Registrar no banco de dados os eventos gerados pela interação com os dispositivos IoT. </li>
 </ul>
 
 ---
