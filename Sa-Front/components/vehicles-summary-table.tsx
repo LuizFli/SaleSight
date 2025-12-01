@@ -364,7 +364,7 @@ export function VehiclesSummaryTable({ limit, showFilters = true }: VehiclesSumm
         </CardContent>
       </Card>
 
-      {/* Customization Modal */}
+      {/* Modal de customização */}
       <CustomizationForm
         isOpen={showCustomization}
         onClose={() => setShowCustomization(false)}

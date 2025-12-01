@@ -27,7 +27,7 @@ export function ProjectsWorkload() {
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
-          {/* Dot matrix */}
+          {/* Matriz de pontos */}
           <div className="flex justify-between items-end h-32">
             {teamMembers.map((member, memberIndex) => (
               <div key={memberIndex} className="flex flex-col items-center gap-1">
@@ -56,7 +56,7 @@ export function ProjectsWorkload() {
             ))}
           </div>
 
-          {/* Team member names */}
+          {/* Nomes dos membros do time */}
           <div className="flex justify-between">
             {teamMembers.map((member, index) => (
               <div key={index} className="text-[10px] text-gray-600 text-center w-5">

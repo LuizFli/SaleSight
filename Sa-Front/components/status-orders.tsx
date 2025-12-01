@@ -177,7 +177,7 @@ export function StatusOrders() {
 
   return (
     <div className="space-y-4">
-      {/* Filter */}
+      {/* Filtro */}
       <Card className="bg-white p-4 border-none shadow-sm">
         <div className="flex items-center gap-2 mb-3">
           <Filter className="w-4 h-4 text-[#ff5722]" />
@@ -209,7 +209,7 @@ export function StatusOrders() {
         <Card className="bg-[#f5f5f5] p-3 border-none text-xs text-[#1a1a1a]">{notice}</Card>
       )}
 
-      {/* Orders Grid */}
+      {/* Grade de pedidos */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredOrders.map((order) => {
           const statusConfig = getStatusConfig(order.status)
@@ -217,7 +217,7 @@ export function StatusOrders() {
 
           return (
             <Card key={order.id} className="bg-white p-4 border-none shadow-sm hover:shadow-md transition-shadow">
-              {/* Header */}
+              {/* Cabeçalho */}
               <div className="flex items-start justify-between mb-3">
                 <div>
                   <p className="text-sm font-semibold text-gray-900">{order.id}</p>
@@ -235,7 +235,7 @@ export function StatusOrders() {
                 </div>
               </div>
 
-              {/* Configuration */}
+              {/* Configuração */}
               <div className="space-y-2 mb-4 text-xs">
                 <p className="flex justify-between text-gray-600">
                   <span>Modelo:</span>
@@ -257,7 +257,7 @@ export function StatusOrders() {
                   <span>Câmbio:</span>
                   <span className="font-medium text-gray-900">{order.transmission}</span>
                 </p>
-                {/* Dados do backend de Pedidos */}
+                {/* Dados do backend de pedidos */}
                 {/* @ts-ignore */}
                 {order.valor !== undefined && (
                   <p className="flex justify-between text-gray-600">
@@ -266,7 +266,7 @@ export function StatusOrders() {
                     <span className="font-medium text-gray-900">R$ {Number.parseFloat(String(order.valor || 0)).toFixed(2)}</span>
                   </p>
                 )}
-                {/* idfila intentionally hidden */}
+                {/* idfila intencionalmente oculto */}
                 <p className="flex justify-between text-gray-600">
                   <span>Rodas:</span>
                   <span className="font-medium text-gray-900">{order.wheels || '—'}</span>
@@ -279,7 +279,7 @@ export function StatusOrders() {
                 )}
               </div>
 
-              {/* Buttons */}
+              {/* Botões */}
               <div className="flex gap-2 items-center justify-between">
                 <Button onClick={() => handleCheckOne(order)} className="p-2 bg-gray-200 hover:bg-gray-300 text-gray-700" size="sm" title="Verificar status">
                   <RefreshCw className={`w-4 h-4 ${checking[order.id] ? 'animate-spin' : ''}`} />

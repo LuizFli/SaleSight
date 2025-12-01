@@ -70,7 +70,7 @@ export function ProjectSummaryTable() {
       </CardHeader>
       <CardContent>
         <div className="space-y-3">
-          {/* Table header */}
+          {/* Cabeçalho da tabela */}
           <div className="grid grid-cols-12 gap-4 text-xs font-medium text-gray-600 pb-2 border-b">
             <div className="col-span-4">Name</div>
             <div className="col-span-3">Project manager</div>
@@ -79,7 +79,7 @@ export function ProjectSummaryTable() {
             <div className="col-span-1">Progress</div>
           </div>
 
-          {/* Table rows */}
+          {/* Linhas da tabela */}
           {projects.map((project, index) => (
             <div key={index} className="grid grid-cols-12 gap-4 items-center text-xs py-2">
               <div className="col-span-4 font-medium">{project.name}</div>

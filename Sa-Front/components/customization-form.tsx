@@ -283,7 +283,7 @@ export function CustomizationForm({ isOpen, onClose, onSubmit, initialData }: Cu
             </div>
           </div>
 
-          {/* Error Message */}
+          {/* Mensagem de erro */}
           {submitError && (
             <div className="flex items-center gap-2 p-2 bg-red-50 border border-red-200 rounded text-xs">
               <AlertCircle className="w-3 h-3 text-red-600" />
@@ -291,7 +291,7 @@ export function CustomizationForm({ isOpen, onClose, onSubmit, initialData }: Cu
             </div>
           )}
 
-          {/* Buttons */}
+          {/* Botões */}
           <div className="flex gap-2 pt-2">
             <Button variant="outline" onClick={onClose} className="flex-1 text-xs h-8 bg-transparent">
               Cancelar
@@ -307,7 +307,7 @@ export function CustomizationForm({ isOpen, onClose, onSubmit, initialData }: Cu
         </DialogContent>
       </Dialog>
 
-      {/* Confirmation Dialog */}
+      {/* Diálogo de confirmação */}
       <Dialog open={showConfirm} onOpenChange={setShowConfirm}>
         <DialogContent className="max-w-sm bg-white">
           <DialogHeader>

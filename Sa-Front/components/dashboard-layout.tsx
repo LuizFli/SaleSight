@@ -22,7 +22,7 @@ import Image from "next/image"
 export function DashboardLayout() {
   return (
     <div className="flex h-screen bg-[#cdb8a5] overflow-hidden">
-      {/* Sidebar */}
+      {/* Barra lateral */}
       <aside className="w-[165px] bg-[#1a1a1a] text-white flex flex-col">
         <div className="p-4 flex flex-col items-center gap-2">
           <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center">
@@ -72,7 +72,7 @@ export function DashboardLayout() {
           </div>
         </nav>
 
-        {/* Bottom icon */}
+        {/* Ícone inferior */}
         <div className="p-4">
           <Button size="icon" className="w-10 h-10 rounded-full bg-[#ff5722] hover:bg-[#ff5722]/90">
             <Activity className="w-5 h-5 text-white" />
@@ -80,14 +80,14 @@ export function DashboardLayout() {
         </div>
       </aside>
 
-      {/* Main content */}
+      {/* Conteúdo principal */}
       <main className="flex-1 flex flex-col overflow-hidden">
-        {/* Header */}
+        {/* Cabeçalho */}
         <header className="bg-[#cdb8a5] border-b border-[#b5a394] px-6 py-3 flex items-center justify-between flex-srhrink-0">
           <h1 className="text-xl font-semibold text-[#1a1a1a]">Dashboard</h1>
 
           <div className="flex items-center gap-4">
-            {/* Search */}
+            {/* Busca */}
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <Input
@@ -96,13 +96,13 @@ export function DashboardLayout() {
               />
             </div>
 
-            {/* Notifications */}
+            {/* Notificações */}
             <Button size="icon" variant="ghost" className="relative h-9 w-9">
               <Bell className="w-4 h-4" />
               <span className="absolute top-1 right-1 w-2 h-2 bg-[#ff5722] rounded-full" />
             </Button>
 
-            {/* User profile */}
+            {/* Perfil do usuário */}
             <div className="flex items-center gap-2">
               <Avatar className="w-8 h-8">
                 <AvatarImage src="/placeholder.svg?height=32&width=32" />
@@ -117,9 +117,9 @@ export function DashboardLayout() {
           </div>
         </header>
 
-        {/* Dashboard content */}
+        {/* Conteúdo do dashboard */}
         <div className="flex-1 p-4 space-y-3 overflow-hidden flex flex-col">
-          {/* Overview section */}
+          {/* Seção de visão geral */}
           <div className="flex items-center justify-between flex-srhrink-0">
             <h2 className="text-base font-semibold">Visão Geral</h2>
             <Button variant="outline" size="sm" className="bg-white text-xs h-8">
@@ -132,7 +132,7 @@ export function DashboardLayout() {
             <OverviewCards />
           </div>
 
-          {/* Vehicles summary and Sales progress */}
+          {/* Resumo de veículos e progresso de vendas */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 flex-1 min-h-0">
             <div className="lg:col-span-2 min-h-0">
               <VehiclesSummaryTable />

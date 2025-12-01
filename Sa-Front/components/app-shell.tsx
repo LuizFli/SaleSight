@@ -31,7 +31,7 @@ export function AppShell({ title = "Dashboard", children }: AppShellProps) {
 
   return (
     <div className="flex h-screen bg-[#cdb8a5] overflow-hidden">
-      {/* Sidebar */}
+      {/* Barra lateral */}
       <aside className="w-[220px] bg-[#1a1a1a] text-white flex flex-col">
         <div className="p-4 flex flex-col items-center gap-3 pt-6">
           <div className="w-20 h-20 rounded-lg bg-white flex items-center justify-center p-3">
@@ -137,26 +137,26 @@ export function AppShell({ title = "Dashboard", children }: AppShellProps) {
         </nav>
       </aside>
 
-      {/* Main content */}
+      {/* Conteúdo principal */}
       <main className="flex-1 flex flex-col overflow-hidden">
-        {/* Header */}
+        {/* Cabeçalho */}
         <header className="bg-[#cdb8a5] border-b border-[#b5a394] px-6 py-3 flex items-center justify-between shrink-0">
           <h1 className="text-xl font-semibold text-[#1a1a1a]">{title}</h1>
 
           <div className="flex items-center gap-4">
-            {/* Search */}
+            {/* Busca */}
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <Input placeholder="Buscar..." className="pl-9 w-[300px] bg-white border-none h-9 text-sm" />
             </div>
 
-            {/* Notifications */}
+            {/* Notificações */}
             <Button size="icon" variant="ghost" className="relative h-9 w-9">
               <Bell className="w-4 h-4" />
               <span className="absolute top-1 right-1 w-2 h-2 bg-[#ff5722] rounded-full" />
             </Button>
 
-            {/* User profile */}
+            {/* Perfil do usuário */}
             <div className="flex items-center gap-2">
               <Avatar className="w-8 h-8">
                 <AvatarImage src="/placeholder.svg?height=32&width=32" />
@@ -170,7 +170,7 @@ export function AppShell({ title = "Dashboard", children }: AppShellProps) {
           </div>
         </header>
 
-        {/* Page content */}
+        {/* Conteúdo da página */}
         <div className="flex-1 p-4 space-y-3 overflow-auto flex flex-col">{children}</div>
       </main>
     </div>

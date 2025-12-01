@@ -17,12 +17,12 @@ export function OverallProgress() {
         </div>
       </CardHeader>
       <CardContent>
-        {/* Circular gauge */}
+        {/* Medidor circular */}
         <div className="relative w-48 h-48 mx-auto mb-6">
           <svg className="w-full h-full -rotate-90" viewBox="0 0 200 200">
-            {/* Background circle */}
+            {/* Círculo de fundo */}
             <circle cx="100" cy="100" r="80" fill="none" stroke="#e5e5e5" strokeWidth="16" />
-            {/* Green progress (0-50%) */}
+            {/* Progresso verde (0-50%) */}
             <circle
               cx="100"
               cy="100"
@@ -33,7 +33,7 @@ export function OverallProgress() {
               strokeDasharray={`${Math.PI * 80 * 0.5} ${Math.PI * 160}`}
               strokeLinecap="round"
             />
-            {/* Yellow progress (50-65%) */}
+            {/* Progresso amarelo (50-65%) */}
             <circle
               cx="100"
               cy="100"
@@ -45,7 +45,7 @@ export function OverallProgress() {
               strokeDashoffset={`${-Math.PI * 80 * 0.5}`}
               strokeLinecap="round"
             />
-            {/* Orange progress (65-72%) */}
+            {/* Progresso laranja (65-72%) */}
             <circle
               cx="100"
               cy="100"
@@ -64,7 +64,7 @@ export function OverallProgress() {
           </div>
         </div>
 
-        {/* Stats */}
+        {/* Estatísticas */}
         <div className="grid grid-cols-2 gap-4">
           <div className="text-center">
             <div className="text-2xl font-bold">95</div>

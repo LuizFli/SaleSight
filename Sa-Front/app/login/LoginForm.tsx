@@ -39,10 +39,10 @@ export default function LoginForm() {
 
   return (
     <div className="min-h-screen bg-white flex">
-      {/* Left Side - Login Form */}
+      {/* Lado esquerdo - Formulário de login */}
       <div className="w-full lg:w-1/2 flex items-center justify-center p-8 lg:p-16">
         <div className="w-full max-w-md">
-          {/* Logo */}
+          {/* Logotipo */}
           <div className="flex items-center gap-3 mb-8">
             <img 
               src="/images/icone-salesview-20-281-29-202.png"
@@ -54,9 +54,9 @@ export default function LoginForm() {
 
           <p className="text-gray-600 mb-10 text-lg">Faça login na sua conta</p>
 
-          {/* Form */}
+          {/* Formulário */}
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Email Field */}
+            {/* Campo de e-mail */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Endereço de e-mail
@@ -76,7 +76,7 @@ export default function LoginForm() {
               </div>
             </div>
 
-            {/* Password Field */}
+            {/* Campo de senha */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Senha
@@ -107,7 +107,7 @@ export default function LoginForm() {
               </div>
             )}
 
-            {/* Login Button */}
+            {/* Botão de login */}
             <Button
               type="submit"
               disabled={loading}
@@ -120,9 +120,9 @@ export default function LoginForm() {
         </div>
       </div>
                 
-      {/* Right Side - Illustration */}
+      {/* Lado direito - Ilustração */}
       <div className="hidden lg:flex w-1/2 bg-[#f8f9fa] items-center justify-center p-16 relative overflow-hidden">
-        {/* Decorative circles */}
+        {/* Círculos decorativos */}
         <div className="absolute top-10 left-10 w-32 h-32 bg-[#1e3a5f] rounded-full opacity-10"></div>
         <div className="absolute bottom-10 right-10 w-40 h-40 bg-[#1e3a5f] rounded-full opacity-10"></div>
         

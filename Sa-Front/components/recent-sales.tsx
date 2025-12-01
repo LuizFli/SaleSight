@@ -66,7 +66,7 @@ export function RecentSales() {
         <CardTitle className="text-base font-semibold">Vendas Recentes</CardTitle>
       </CardHeader>
       <CardContent>
-        {/* Tabs */}
+        {/* Abas */}
         <div className="flex gap-4 mb-4 border-b border-gray-200">
           {tabs.map((tab, index) => (
             <button
@@ -81,7 +81,7 @@ export function RecentSales() {
           ))}
         </div>
 
-        {/* Sales list */}
+        {/* Lista de vendas */}
         <div className="space-y-3">
           {sales.map((sale) => (
             <div key={sale.id} className="flex items-start gap-3">
