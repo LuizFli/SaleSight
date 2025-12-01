@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "AutoTech - Plataforma de Vendas de Carros",
-  description: "Plataforma web de vendas de carros",
+  title: "SaleSight - Plataforma de Gerenciamento de Estoque de Carros",
+  description: "Plataforma web de Gerenciamento de Estoque de Carros",
   generator: "v0.app",
 }
 

@@ -1,17 +1,17 @@
-# Plataforma Web de Vendas de Carros com Integração IoT
+# Sistema de Gestão de Estoque para Fábrica de Carros com Integração IoT
 
-##### Em um cenário onde a tecnologia e a conectividade transformam o mercado automotivo, a eficiência no gerenciamento de vendas e monitoramento em tempo real torna-se um diferencial competitivo. A **Plataforma Web de Vendas de Carros com Integração IoT** surge como uma solução inovadora que combina o poder da web com a Internet das Coisas, permitindo o controle completo de veículos, vendas e dispositivos conectados.
+##### Este repositório reúne um monorepo com frontend e backend para um sistema de gestão de estoque de uma fábrica de carros, com integração IoT em tempo real. O objetivo é unificar o controle de itens/veículos e componentes, as movimentações de estoque (entrada, saída, transferência, ajustes), a rastreabilidade por lote/serial e a visualização de eventos da bancada/linha IoT (sensores/atuadores) em uma experiência moderna, responsiva e segura.
 
-##### O sistema possibilita a administração de produtos, vendedores, vendas e sensores integrados, proporcionando informações em tempo real sobre o status dos veículos e ações realizadas na plataforma. Com uma interface moderna e responsiva, construída com **Next.js** e **Node.js**, a aplicação garante alto desempenho, escalabilidade e uma experiência intuitiva tanto para administradores quanto para vendedores.
+##### Estrutura do projeto: a pasta `Sa-Front/` contém o frontend em **Next.js/React** (App Router), enquanto a pasta `backend/` traz a API em **Node.js/Express** com **Prisma** e **PostgreSQL**. A integração IoT ocorre via protocolos como HTTP, MQTT e/ou WebSocket, permitindo enviar comandos para a bancada/esteiras, ler sensores (ex.: presença, RFID, balanças) e receber telemetria em tempo real.
 
-##### Além disso, o projeto incorpora uma bancada **IoT** (Internet das Coisas) que interage diretamente com a aplicação, simulando eventos físicos como acionamento de LEDs, sensores e indicadores, demonstrando o potencial da integração entre hardware e software no setor automotivo.
+##### O sistema possibilita a administração de itens/veículos, clientes/fornecedores, pedidos/requisições internas e usuários, além de painéis com indicadores operacionais (níveis de estoque, rupturas, giro, ocupação). A interface é desenvolvida para alto desempenho e boa usabilidade, enquanto o backend prioriza segurança (JWT), escalabilidade e observabilidade dos eventos IoT.
 
 <p align="center"><img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/></p>
 
 ---
 
 ## Índice
-* [Introdução](#plataforma-web-de-vendas-de-carros-com-integração-iot)
+* [Introdução](#sistema-de-gestão-de-estoque-para-fábrica-de-carros-com-integração-iot)
 * [Índice](#índice)
 * [Tecnologias Utilizadas](#tecnologias-utilizadas)
 * [Requisitos Funcionais](#requisitos-funcionais)
@@ -52,12 +52,12 @@
 ## Requisitos Funcionais
 
 <ul>
-  <li><strong>[RF001]</strong> Permitir login. </li>
-  <li><strong>[RF002]</strong> Cadastrar, editar e excluir veículos (marca, modelo, valor, cor e etc... ). </li>
-  <li><strong>[RF003]</strong> Exibir listagem e pesquisa de pedidos com filtros de status. </li>
-  <li><strong>[RF006]</strong> Cadastrar e gerenciar clientes (nome, CPF, telefone, e-mail, endereço). </li>
-  <li><strong>[RF007]</strong> Visualizar histórico de vendas da organização e por vendedor. </li>
-  <li><strong>[RF008]</strong> Painel administrativo com indicadores de vendas, lucros e estoque. </li>
+  <li><strong>[RF001]</strong> Autenticação com login e controle de sessão via JWT. </li>
+  <li><strong>[RF002]</strong> Cadastro e gestão de itens/veículos e componentes (SKU, marca, modelo, ano, cor, lote/serial, custo/valor). </li>
+  <li><strong>[RF003]</strong> Movimentações de estoque: entrada, saída, transferência entre locais, ajustes e devoluções. </li>
+  <li><strong>[RF004]</strong> Inventário e contagem cíclica com reconciliação de divergências. </li>
+  <li><strong>[RF005]</strong> Rastreabilidade e histórico de movimentações por lote/serial e por localização. </li>
+  <li><strong>[RF006]</strong> Painéis e alertas: níveis mínimos, rupturas, giro e ocupação por almoxarifado/linha. </li>
 </ul>
 
 ---
@@ -65,11 +65,11 @@
 ## Requisitos de Integração IoT
 
 <ul>
-  <li><strong>[RI001]</strong> Estabelecer comunicação entre a plataforma e a bancada IoT via HTTP, MQTT ou WebSocket. </li>
-  <li><strong>[RI002]</strong> Enviar comandos da aplicação web para acionar atuadores na bancada (LEDs, buzzer, etc.). </li>
-  <li><strong>[RI003]</strong> Receber dados de sensores em tempo real (ex.: temperatura, distância, presença). </li>
-  <li><strong>[RI004]</strong> Exibir em tempo real o status dos sensores e dispositivos na interface da aplicação. </li>
-  <li><strong>[RI005]</strong> Registrar no banco de dados os eventos gerados pela interação com os dispositivos IoT. </li>
+  <li><strong>[RI001]</strong> Comunicação com a bancada/linha via HTTP, MQTT e/ou WebSocket. </li>
+  <li><strong>[RI002]</strong> Enviar comandos para atuadores (sinalizadores, esteiras, buzzers) conforme regras de estoque. </li>
+  <li><strong>[RI003]</strong> Receber leituras de sensores em tempo real (ex.: presença, RFID/código de barras, balanças). </li>
+  <li><strong>[RI004]</strong> Exibir em tempo real o status/telemetria e refletir movimentações na interface. </li>
+  <li><strong>[RI005]</strong> Registrar no banco de dados todos os eventos IoT com trilha de auditoria. </li>
 </ul>
 
 ---
@@ -88,7 +88,13 @@
 ---
 
 ## Protótipo de Páginas
-VAMOS FAZER
+Em construção. Telas planejadas (presentes em `Sa-Front/app/`):
+
+- Login (`/login`)
+- Pedidos/Requisições (`/pedidos`)
+- Estoque (`/estoque`)
+- Status em tempo real (`/status`)
+- Configurações (`/configuracoes`)
 ---
 
 ### Desenvolvedores do Projeto
