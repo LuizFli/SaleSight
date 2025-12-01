@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-# If DB_HOST is provided and DATABASE_URL is not, construct DATABASE_URL
+# Se DB_HOST for fornecido e DATABASE_URL não, construa o DATABASE_URL
 if [ -n "${DB_HOST}" ] && [ -z "${DATABASE_URL}" ]; then
   DB_USER="${DB_USER:-root}"
   DB_PASS="${DB_PASS:-senai}"
@@ -12,7 +12,7 @@ if [ -n "${DB_HOST}" ] && [ -z "${DATABASE_URL}" ]; then
   echo "[entrypoint] Set DATABASE_URL from DB_HOST: ${DATABASE_URL}"
 fi
 
-# If SIMULATOR_HOST is provided and SIMULATOR_URL is not, construct SIMULATOR_URL
+# Se SIMULATOR_HOST for fornecido e SIMULATOR_URL não, construa o SIMULATOR_URL
 if [ -n "${SIMULATOR_HOST}" ] && [ -z "${SIMULATOR_URL}" ]; then
   SIMULATOR_PORT="${SIMULATOR_PORT:-3000}"
   SIMULATOR_PROTOCOL="${SIMULATOR_PROTOCOL:-http}"
@@ -21,8 +21,8 @@ if [ -n "${SIMULATOR_HOST}" ] && [ -z "${SIMULATOR_URL}" ]; then
   echo "[entrypoint] Set SIMULATOR_URL from SIMULATOR_HOST: ${SIMULATOR_URL}"
 fi
 
-# If DATABASE_URL is provided explicitly, ensure it's exported and write it
-# to /app/.env so code that reads a .env file (or Prisma using dotenv) can pick it up.
+# Se DATABASE_URL for fornecido explicitamente, garanta que seja exportado e escreva-o
+# em /app/.env para que o código que lê um arquivo .env (ou o Prisma usando dotenv) possa utilizá-lo.
 if [ -n "${DATABASE_URL}" ]; then
   echo "[entrypoint] DATABASE_URL present; exporting and writing to /app/.env"
   export DATABASE_URL
@@ -31,7 +31,7 @@ if [ -n "${DATABASE_URL}" ]; then
   printf 'DATABASE_URL="%s"\n' "${DATABASE_URL}" > /app/.env
 fi
 
-# If SIMULATOR_URL is provided (or constructed), write it to .env
+# Se SIMULATOR_URL for fornecido (ou construído), escreva-o no .env
 if [ -n "${SIMULATOR_URL}" ]; then
   echo "[entrypoint] SIMULATOR_URL present; exporting and writing to /app/.env"
   export SIMULATOR_URL
@@ -39,7 +39,7 @@ if [ -n "${SIMULATOR_URL}" ]; then
   printf 'SIMULATOR_URL="%s"\n' "${SIMULATOR_URL}" >> /app/.env
 fi
 
-# If CORS_ALLOWED_ORIGINS is provided, write it to .env
+# Se CORS_ALLOWED_ORIGINS for fornecido, escreva-o no .env
 if [ -n "${CORS_ALLOWED_ORIGINS}" ]; then
   echo "[entrypoint] CORS_ALLOWED_ORIGINS present; exporting and writing to /app/.env"
   export CORS_ALLOWED_ORIGINS
