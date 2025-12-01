@@ -1,0 +1,46 @@
+# 🎙️ Roteiro de Apresentação Técnica: SaleSight
+
+## Slide 1: Capa / Introdução
+"Bom dia/Boa tarde a todos. Hoje vou apresentar a visão técnica do SaleSight, uma plataforma full-stack de gestão de vendas e estoque. O objetivo desta apresentação é detalhar a arquitetura, as tecnologias escolhidas e como estruturamos a solução para ser escalável e performática."
+
+## Slide 2: Visão Geral da Arquitetura
+"Começando pela arquitetura de alto nível, adotamos um modelo de Microsserviços/Containers separados.
+* O Frontend é uma aplicação SPA/SSR construída com Next.js, focada na experiência do usuário.
+* O Backend é uma API RESTful em Node.js que centraliza a lógica de negócios.
+* E utilizamos o MySQL como nosso banco de dados relacional.
+Toda a comunicação é feita via HTTP/JSON, garantindo desacoplamento entre as camadas."
+
+## Slide 3: O Frontend (Sa-Front)
+"No Frontend, localizado na pasta Sa-Front, utilizamos o que há de mais moderno no ecossistema React:
+* Next.js (App Router): Para roteamento eficiente e renderização híbrida.
+* TypeScript: Para garantir tipagem estática e reduzir bugs em tempo de desenvolvimento.
+* UI/UX: Utilizamos Tailwind CSS para estilização rápida e componentes baseados no Radix UI (Shadcn UI), o que nos dá acessibilidade e consistência visual nativas.
+* A estrutura de pastas é modular, separando components, hooks e lib (utilitários de API), facilitando a manutenção."
+
+## Slide 4: O Backend (API)
+"No Backend, focamos em performance e organização.
+* Utilizamos Node.js com Express 5, aproveitando as melhorias recentes no tratamento de erros assíncronos.
+* A arquitetura segue o padrão MVC (Model-View-Controller) com uma camada de Services, isolando a regra de negócio dos controladores HTTP.
+* Para segurança, implementamos autenticação via JWT (JSON Web Tokens) e criptografia de senhas com Bcrypt.
+* Temos rotas específicas para Autenticação, Pedidos, Produtos e Simulador de vendas."
+
+## Slide 5: Banco de Dados e ORM
+"Para a persistência de dados, escolhemos o MySQL pela sua robustez.
+* A interação com o banco é feita através do Prisma ORM. Isso nos permite trabalhar com o banco usando objetos JavaScript/TypeScript, sem escrever SQL puro, além de facilitar as migrações de esquema.
+* Nosso modelo de dados contempla entidades principais como User (com controle de cargos), Produto (com detalhes técnicos como motor e câmbio) e Pedidos."
+
+## Slide 6: Infraestrutura e DevOps
+"Pensando em deploy e escalabilidade, toda a aplicação é containerizada.
+* Utilizamos Docker para criar ambientes isolados para o Frontend, Backend e Banco de Dados.
+* O deploy é configurado para rodar na AWS (EC2), com scripts de inicialização (docker-entrypoint.sh) que automatizam o setup.
+* No Frontend, usamos um servidor Nginx como proxy reverso para servir os arquivos estáticos e gerenciar as requisições, garantindo alta performance na entrega do conteúdo."
+
+## Slide 7: Demonstração (Opcional)
+"Vou mostrar rapidamente a estrutura do código.
+* Aqui em backend/src/app.js temos o ponto de entrada da API.
+* E aqui em Sa-Front/app/page.tsx temos a página inicial do dashboard.
+(Mostre brevemente um fluxo: Rota -> Controller -> Service -> Prisma)."
+
+## Slide 8: Conclusão
+"Em resumo, o SaleSight é uma solução robusta que une uma interface moderna e responsiva a um backend seguro e bem estruturado. A escolha dessa stack (Next.js + Node + Prisma) nos permite iterar rápido e entregar valor com qualidade.
+Obrigado pela atenção. Estou aberto a perguntas técnicas."
