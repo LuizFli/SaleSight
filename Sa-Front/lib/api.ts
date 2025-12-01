@@ -1,5 +1,5 @@
 import { getCookie, setCookie, TOKENS, deleteCookie } from "./session"
-// Allow using process.env in client-compiled code with type safety off
+// Permite usar process.env em código compilado no cliente sem verificação de tipos
 declare const process: any
 
 const BASE_URL = (typeof process !== "undefined" && (process.env as any)?.NEXT_PUBLIC_API_BASE_URL) || "http://52.203.182.51:4000"
@@ -222,7 +222,7 @@ export async function refreshPedidoStatus(id: number) {
 }
 
 export async function getSimuladorHealth() {
-  // Request simulador health using current auth token so backend can allow access.
-  // Do not force `auth: false` here because some deployments protect this route.
+  // Solicita saúde do simulador usando o token atual para permitir acesso no backend.
+  // Não force `auth: false` aqui porque algumas implantações protegem esta rota.
   return apiFetch<{ online: boolean; status: number | null; data: any }>(`/simulador/health`, { method: "GET" })
 }

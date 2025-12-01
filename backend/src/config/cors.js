@@ -17,7 +17,7 @@ if (process.env.CORS_ALLOWED_ORIGINS) {
 
 export const corsOptions = {
   origin: (origin, callback) => {
-    if (!origin) return callback(null, true); // allow non-browser tools
+    if (!origin) return callback(null, true); // permite ferramentas fora do navegador
     if (allowedOrigins.includes(origin)) return callback(null, true);
     return callback(new Error("Not allowed by CORS"));
   },

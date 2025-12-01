@@ -28,7 +28,7 @@ interface Vehicle {
   year: string
 }
 
-// Use the exported Characteristics type from customization-form to avoid divergence
+// Usa o tipo Characteristics exportado de customization-form para evitar divergência
 
 interface VehiclesSummaryTableProps {
   limit?: number
@@ -175,7 +175,7 @@ export function VehiclesSummaryTable({ limit, showFilters = true }: VehiclesSumm
   
 
   const handleCustomizationSubmit = async (characteristics: Characteristics) => {
-    // Build produto payload
+    // Monta payload de produto
     const colorName = colors.find((c) => c.id === characteristics.color)?.name || characteristics.color
     const transmissionName = transmissions.find((t) => t.id === characteristics.transmission)?.name || characteristics.transmission
     const precoNum = parsePrice(characteristics.price)
@@ -253,7 +253,7 @@ export function VehiclesSummaryTable({ limit, showFilters = true }: VehiclesSumm
       }
       await loadProdutos()
     } catch (_) {
-      // Optionally show toast
+      // Opcionalmente exibir toast
     } finally {
       setShowCustomization(false)
       setCustomizationData(undefined)
@@ -263,7 +263,7 @@ export function VehiclesSummaryTable({ limit, showFilters = true }: VehiclesSumm
   const handleSave = async () => {
     if (!editData) return
     try {
-      // Mapear campos visuais para o schema de Produto no backend
+      // Mapeia campos visuais para o schema de Produto no backend
       const [marca, ...resto] = (editData.name || "").split(" ")
       const modelo = editData.model || resto.join(" ") || editData.category
       const ano = Number.parseInt(String(editData.year)) || new Date().getFullYear()
@@ -626,7 +626,7 @@ export function VehiclesSummaryTable({ limit, showFilters = true }: VehiclesSumm
 
 function parsePrice(input: string): number {
   if (!input) return 0
-  // Remove currency and spaces, convert comma decimal to dot
+  // Remove símbolo de moeda e espaços; converte vírgula decimal em ponto
   const cleaned = input.replace(/[^0-9,\.]/g, "").replace(/\./g, "").replace(",", ".")
   const n = Number(cleaned)
   return Number.isFinite(n) ? n : 0

@@ -97,7 +97,7 @@ export const updateUser = async (req, res) => {
       data: user,
     });
   } catch (error) {
-    // Prisma error code P2025 -> record not found
+    // Código de erro Prisma P2025 -> registro não encontrado
     if (error && error.code === "P2025") {
       return res.status(404).send("Usuário não encontrado!");
     }

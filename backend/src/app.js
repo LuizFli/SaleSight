@@ -20,7 +20,7 @@ app.get("/health", (req, res) => {
 
 app.use(authRouter);
 app.use(publicPedidosRouter);
-// Expose a small public endpoint to check the external simulator health
+// Expõe um pequeno endpoint público para verificar a saúde do simulador externo
 app.use(simuladorRouter);
 
 app.use(auth);

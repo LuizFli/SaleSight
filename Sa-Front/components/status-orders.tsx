@@ -45,7 +45,7 @@ export function StatusOrders() {
       setLoading(true)
       const data = await getPedidos()
       const mapped: Order[] = data
-        .filter((p: Pedido) => p.status !== 'ENTREGUE') // Filter out delivered orders
+        .filter((p: Pedido) => p.status !== 'ENTREGUE') // Remove pedidos entregues
         .map((p: Pedido) => {
         const pe = (p as any)
         const first = (pe.produto?.[0] || pe.produtosEmPedidos?.[0]?.produto) as any
@@ -66,7 +66,7 @@ export function StatusOrders() {
           // Status
           status: mapBackendStatus(p.status),
           progress: mapProgress(p.status),
-          // Keep original ISO timestamp for ordering and a human-friendly date for display
+          // Mantém timestamp ISO original para ordenação e gera data amigável para exibição
           createdAtIso: p.createdAt,
           createdAt: new Date(p.createdAt).toISOString().split("T")[0],
           // Extras
@@ -76,7 +76,7 @@ export function StatusOrders() {
           valor: p.valor,
         }
       })
-      // Sort orders so that: production -> pending (oldest first) -> completed (oldest first) -> errors
+      // Ordena pedidos: produção -> pendente (mais antigo) -> concluído (mais antigo) -> erros
       const rank: Record<string, number> = { production: 0, pending: 1, completed: 2, error: 3 }
       mapped.sort((a, b) => {
         const ra = rank[a.status] ?? 99
@@ -103,13 +103,13 @@ export function StatusOrders() {
     try {
       setLoading(true)
       
-      // Update order status to ENTREGUE so it disappears from the list
+      // Atualiza status para ENTREGUE para que seja removido da lista
       await updatePedido(Number(order.id), { status: 'ENTREGUE' })
 
       setMovedOrders((prev) => [...prev, { id: order.id, data: order }])
       setNotice(`Pedido #${order.id} movido para o estoque.`)
       
-      // Reload to ensure list is up to date
+      // Recarrega para garantir lista atualizada
       await loadFromBackend()
     } catch (error) {
       console.error(error)
@@ -120,7 +120,7 @@ export function StatusOrders() {
   }
 
   const handleRefresh = async () => {
-    // Ask backend to update current status from queue for each pedido
+    // Solicita ao backend que atualize o status atual a partir da fila para cada pedido
     try {
       await Promise.all(
         orders.map((o) => {

@@ -28,8 +28,8 @@ export default function PedidosPage() {
     }
   }
   const pedidosFiltrados = useMemo(() => {
-    // Determine base list according to filter.
-    // Per request: show concluded orders as well; treat 'EM_ANDAMENTO' similar to 'TODOS'
+    // Determina a lista base conforme o filtro.
+    // Conforme solicitado: mostrar pedidos concluídos também; tratar 'EM_ANDAMENTO' como 'TODOS'
     let list = [] as Pedido[]
     if (filter === 'TODOS' || filter === 'EM_ANDAMENTO') {
       list = [...pedidos]
@@ -37,7 +37,7 @@ export default function PedidosPage() {
       list = pedidos.filter(p => String(p.status).toUpperCase() === filter)
     }
 
-    // Sort: production -> pending (oldest first) -> completed (oldest first) -> others
+    // Ordenação: produção -> pendente (mais antigo primeiro) -> finalizado (mais antigo primeiro) -> outros
     const rank: Record<string, number> = {
       'EM_PROCESSO': 0,
       'EM PROCESSO': 0,

@@ -3,7 +3,7 @@ import { simuladorHealth } from "../controllers/simuladorController.js";
 
 const router = Router();
 
-// Public health proxy for the external simulator
+// Proxy público de verificação de saúde para o simulador externo
 router.get("/simulador/health", simuladorHealth);
 
 export default router;

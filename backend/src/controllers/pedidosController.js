@@ -258,7 +258,7 @@ export const deletePedido = async (req, res) => {
 export const updateStatus = async (req, res) => {
   const { params, query, body } = req;
   try {
-    // Accept status from body, nested payload, or query for flexibility
+    // Aceita status do body, de payload aninhado ou da query para flexibilidade
     const incomingStatus =
       body?.status || body?.payload?.status || query?.status || "";
     if (!incomingStatus) {

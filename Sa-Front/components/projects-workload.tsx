@@ -5,13 +5,13 @@ import { ChevronDown } from "lucide-react"
 export function ProjectsWorkload() {
   const teamMembers = ["Sam", "Mandy", "Kim", "Dmitry", "Viago", "Kadin", "Matin"]
 
-  // Generate workload data (5 weeks x 7 members)
+  // Gera dados de carga de trabalho (5 semanas x 7 membros)
   const workloadData = [
-    [2, 0, 0, 0, 0, 0, 1], // Week 1
-    [0, 0, 0, 0, 0, 1, 0], // Week 2
-    [0, 1, 0, 0, 0, 0, 2], // Week 3
-    [0, 0, 0, 0, 0, 0, 0], // Week 4
-    [0, 0, 0, 0, 0, 1, 0], // Week 5
+    [2, 0, 0, 0, 0, 0, 1], // Semana 1
+    [0, 0, 0, 0, 0, 1, 0], // Semana 2
+    [0, 1, 0, 0, 0, 0, 2], // Semana 3
+    [0, 0, 0, 0, 0, 0, 0], // Semana 4
+    [0, 0, 0, 0, 0, 1, 0], // Semana 5
   ]
 
   return (

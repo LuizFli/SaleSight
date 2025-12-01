@@ -1,4 +1,4 @@
-// Simple cookie helpers for client-side token management
+// Helpers simples de cookies para gerenciamento de tokens no cliente
 export function setCookie(name: string, value: string, days = 7) {
   if (typeof document === "undefined") return
   const d = new Date()

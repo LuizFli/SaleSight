@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 
-// Render the client-only login form inside a Suspense boundary to avoid CSR bailout
+// Renderiza o formulário de login apenas no cliente dentro de um boundary Suspense para evitar fallback CSR
 import LoginForm from './LoginForm'
 
 export default function LoginPage() {
